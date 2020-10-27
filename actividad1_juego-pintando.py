@@ -52,7 +52,7 @@ def rectangle(start, end):
         #gira un ángulo de 90°
         left(90)
    
-   #termina de dibujar     
+   #termina de rellenar     
     end_fill()
 
 def triangle(start, end):
@@ -71,8 +71,9 @@ def triangle(start, end):
         #se mueve y dibuja la distancia entre el punto final e inicial en x
         forward(end.x - start.x)
         #gira un ángulo de 120° 
-        right(120)
+        left(120)
     
+    #terminar de rellenar
     end_fill()
 
 
