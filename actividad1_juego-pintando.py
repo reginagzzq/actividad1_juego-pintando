@@ -10,11 +10,15 @@ def line(start, end):
 
 def square(start, end):
     "Draw square from start to end."
+    #levantar pluma
     up()
+    #se dirige a la primera posición
     goto(start.x, start.y)
+    #baja la pluma para empezar a dibujar
     down()
+    #rellenar área de color
     begin_fill()
-
+    #Se dibujan 4 lineas con 90° de diferencia
     for count in range(4):
         forward(end.x - start.x)
         left(90)
@@ -23,10 +27,15 @@ def square(start, end):
 
 def circles(start, end):
     "Draw circle from start to end."
+    #levantar pluma
     up()
+    #se dirige a la primera posición
     goto(start.x, start.y)
+    #baja la pluma para empezar a dibujar
     down()
+    #rellenar área de color
     begin_fill()
+    #funcion para crear circulo de radio (end.x-start.x)
     circle(end.x-start.x)
     end_fill()
 
@@ -43,16 +52,16 @@ def rectangle(start, end):
     
     #se repite dos veces para completar el rectángulo
     for count in range(2):
-        #se mueve y dibuja la distancia entre el punto final e inicial en x
+        #se mueve y dibuja la distancia entre el punto final y el inicial en x
         forward(end.x - start.x)
         #gira un ángulo de 90°
         left(90)
-        #se mueve y dibuja la distancia entre el punto final e inicial en y
+        #se mueve y dibuja la distancia entre el punto final y el inicial en y
         forward(end.y - start.y)
         #gira un ángulo de 90°
         left(90)
    
-   #termina de rellenar     
+   #termina de dibujar     
     end_fill()
 
 def triangle(start, end):
@@ -66,21 +75,17 @@ def triangle(start, end):
     #rellenar área de color
     begin_fill()
     
-    #se repite tres veces para dibujar las tres líneas del triángulo
     for count in range(3):
-        #se mueve y dibuja la distancia entre el punto final e inicial en x
         forward(end.x - start.x)
-        #gira un ángulo de 120° 
         left(120)
-    
-    #terminar de rellenar
+        
     end_fill()
-
+        
 
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
-
+#Se indican los puntos de start y end
     if start is None:
         state['start'] = vector(x, y)
     else:
@@ -92,12 +97,13 @@ def tap(x, y):
 def store(key, value):
     "Store value in state at key."
     state[key] = value
-
+#Se crea la ventana de dibujo
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+#Declaración de los colores y formas
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
