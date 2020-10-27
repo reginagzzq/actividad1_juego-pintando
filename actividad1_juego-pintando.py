@@ -74,7 +74,7 @@ def triangle(start, end):
     down()
     #rellenar área de color
     begin_fill()
-    
+    #se mueve y dibuja la distancia entre el punto final e inicial en x
     for count in range(3):
         forward(end.x - start.x)
         left(120)
