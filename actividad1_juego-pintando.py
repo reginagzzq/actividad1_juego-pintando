@@ -43,11 +43,11 @@ def rectangle(start, end):
     
     #se repite dos veces para completar el rectángulo
     for count in range(2):
-        #se mueve y dibuja la distancia entre el punto final y el inicial en x
+        #se mueve y dibuja la distancia entre el punto final e inicial en x
         forward(end.x - start.x)
         #gira un ángulo de 90°
         left(90)
-        #se mueve y dibuja la distancia entre el punto final y el inicial en y
+        #se mueve y dibuja la distancia entre el punto final e inicial en y
         forward(end.y - start.y)
         #gira un ángulo de 90°
         left(90)
@@ -66,12 +66,14 @@ def triangle(start, end):
     #rellenar área de color
     begin_fill()
     
-    for count in range(1):
+    #se repite tres veces para dibujar las tres líneas del triángulo
+    for count in range(3):
+        #se mueve y dibuja la distancia entre el punto final e inicial en x
         forward(end.x - start.x)
-        left(90)
-        forward(end.y - start.y)
-        left(135)
-        forward(end.x - start.x)
+        #gira un ángulo de 120° 
+        right(120)
+    
+    end_fill()
 
 
 def tap(x, y):
