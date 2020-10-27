@@ -1,3 +1,5 @@
+#A00827434 Ernesto García González
+#A00827107 Regina González
 from turtle import *
 from freegames import vector
 
